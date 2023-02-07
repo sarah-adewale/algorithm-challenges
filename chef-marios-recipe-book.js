@@ -69,6 +69,12 @@ function removeDupesFromArray(arr){
     
 }
 
+function removeDupesFromArray(arr){
+  return [...new Set(arr)]
+ 
+    
+}
+
 console.log(removeDupesFromArray(eggScrambleRecipe));
 
 // set filters out duplicates in a list
