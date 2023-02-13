@@ -25,55 +25,79 @@ const eggScrambleRecipe = [
         ]
 // optimized solution
 
-function removeDupesFromArray(arr){
-    let cache = {}
-    let newArr = []
+// function removeDupesFromArray(arr){
+//     let cache = {}
+//     let newArr = []
 
-    for(let i = 0; i < arr.length; i++){
-        if(!cache[arr[i]]){
-            newArr.push(arr[i])
-            cache[arr[i]] = true
-            console.log(cache[arr[i]])
+//     for(let i = 0; i < arr.length; i++){
+//         if(!cache[arr[i]]){
+//             newArr.push(arr[i])
+//             cache[arr[i]] = true
+//             console.log(cache[arr[i]])
+//         }
+//     }
+//     return newArr
+ 
+// }
+
+function removeDupesFromArray(arr){
+    let breadcrumps = {}
+    let uniqueItems = []
+
+    for(let recipe of arr){
+        if(!breadcrumps[recipe]){
+            uniqueItems.push(recipe)
+            breadcrumps[recipe] = true
+
         }
     }
-    return newArr
- 
+    return uniqueItems
 }
 
 
 // brute force solution
-function removeDupesFromArray(arr){
-    let uniqueItems = []
-    arr.forEach(element => {
-        if(!uniqueItems.includes(element)){
-            uniqueItems.push(element)
-        }
-    });
+// function removeDupesFromArray(arr){
+//     let uniqueItems = []
+//     arr.forEach(element => {
+//         if(!uniqueItems.includes(element)){
+//             uniqueItems.push(element)
+//         }
+//     });
 
-    return uniqueItems
+//     return uniqueItems
  
+// }
+
+function removeDupesFromArray(arr){
+    let newArr = []
+    arr.forEach((element) => {
+        if(!newArr.includes(element)){
+            newArr.push(element)
+        }
+    })
+    return newArr
 }
 
 //optimized solution using objects
 
-function removeDupesFromArray(arr){
-    let uniquesVal = {}
-    return arr.filter((item) => {
-        if(!uniquesVal[item]){
-            uniquesVal[item] = true
-            return true
-        }
-        return false
-    })
+// function removeDupesFromArray(arr){
+//     let uniquesVal = {}
+//     return arr.filter((item) => {
+//         if(!uniquesVal[item]){
+//             uniquesVal[item] = true
+//             return true
+//         }
+//         return false
+//     })
  
     
-}
+// }
 
-function removeDupesFromArray(arr){
-  return [...new Set(arr)]
+// function removeDupesFromArray(arr){
+//   return [...new Set(arr)]
  
     
-}
+// }
 
 console.log(removeDupesFromArray(eggScrambleRecipe));
 
