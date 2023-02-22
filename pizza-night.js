@@ -24,8 +24,8 @@ let highestVotes = 0
 let winningItem = ''
 for(let food in obj){
     if(obj[food] > highestVotes){
-        highestVotes = obj[food]
-        winningItem = food
+        highestVotes = obj[food] //value
+        winningItem = food //property
     }
    
 //    console.log(highestVotes, winningItem) 
