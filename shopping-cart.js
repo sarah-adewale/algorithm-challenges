@@ -48,8 +48,10 @@ function total(arr){
     return arr
         .map((item) => item.price)
         .reduce((acc, c) => acc + c, 0,).toFixed(2)
-   
-    
+}
+
+function total(arr){
+    return arr.reduce((acc, c) => acc + c.price, 0).toFixed(2)
 }
 
 console.log(total(shoppingCart));
