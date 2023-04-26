@@ -16,7 +16,6 @@ function clearTheGarden(arr){
     })
 }
 
-
 fetch(url) 
     .then(response => response.json())
     .then(result => clearTheGarden(result))
